@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DonTec.lda</title>
     <link rel="stylesheet" href="estilo/estilo.css">
+    <link rel="stylesheet" href="estilo/estiloformulario.css">
 </head>
 <body>
     <header style="background-image: url('imagens/fifa242.jpg');">
@@ -26,8 +27,29 @@
             </section>
         </div>
     </header>
-    <div class="ENCOMENDAR">
-        
+    <h1>FORMULARIO PARA comprar</h1>
+    <form action="" method="get" autocomplete="off" class="formulario">
+        <label for="id_nome">primeiro nome</label>
+        <input type="text" name="nome" id="id_nome">
+
+        <label for="id_email">email</label>
+        <input type="email" name="email" id="id_email">
+
+        <label for="id_produto">nome/id do produto</label>
+        <input type="text" name="produto" id="id_produto">
+
+        <label for="id_mensagem">Mensagem</label>
+        <textarea name="mensagem" id="id_mensagem" cols="30" rows="10"></textarea>
+
+        <button >enviar mensagem</button>
+    </form>
+
+
+    <div class="rodape">
+        <a href="#" class="botao">HOME</a>
+        <a href="#" class="botao">CONTACTOS</a>
+        <p>autor da pagina</p>
+        <p>Horacio Manuel</p>
     </div>
 </body>
 </html>

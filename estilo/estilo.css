@@ -16,7 +16,7 @@ body{
     font-size: 50px;
     color: white;
 }
-span{
+.logo span{
     color: aqua;
 }
 
@@ -108,3 +108,32 @@ nav ul a{
     margin-top: 10px;
     color: white;
 }
+/* cardapio de compra*/
+
+.card {
+    position: relative;
+    margin: 10px;
+    padding: 50px;
+    background-color: white;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px rgb(100, 100, 100);
+
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.card img{
+    margin: 4px;
+    border-radius: 12px;
+}
+.card div{
+}
+/* fim do cardapio de compra*/
+.jogos_compra{
+    display: flex;
+    justify-content: space-around;
+}
+/*formulario*/
