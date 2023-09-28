@@ -1,0 +1,32 @@
+.vendendo{
+    display: inline-block;
+    margin: 20px;
+    width: 300px;
+    box-shadow: 0 0 12px 1px;
+    border-radius: 10px;
+}
+.vendendo .imagemdoproduto img{
+    width: 100%;
+}
+.vendendo .descricaodoproduto{
+    text-align: center;
+}
+.descricaodoproduto p{
+    font-size: 20px;
+    margin: 10px;
+}
+@media screen and (max-width: 730px){
+    .vendendo{
+        display: block;
+        margin: 20px auto;
+        width: 250px;
+        box-shadow: 0 0 12px 1px;
+        border-radius: 10px;
+    }
+    .vendendo .imagemdoproduto img{
+        width: 100%;
+    }
+    .vendendo .descricaodoproduto{
+        text-align: center;
+    }
+}
