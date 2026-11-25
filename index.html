@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horácio Manuel – Software Developer e Designer</title>
+    <meta name="description"
+        content="Portfólio de Horácio Manuel: sistemas de gestão para empresas, Laravel e PHP, design gráfico e branding. Angola.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Fira+Code:wght@400;500&family=Figtree:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --fundo: #0d0a14;
+            --painel: #1a1230;
+            --borda: #3b2a5c;
+            --roxo: #a855f7;
+            --lilas: #c77dff;
+            --texto: #d8c7f0;
+            --branco: #ffffff;
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: Figtree, system-ui, sans-serif;
+            line-height: 1.65;
+            font-size: 1.0625rem
+        }
+
+        a {
+            color: inherit
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--lilas);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Bricolage Grotesque", Figtree, sans-serif;
+            color: var(--branco);
+            line-height: 1.1
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0
+        }
+
+        nav strong {
+            font-family: "Bricolage Grotesque", sans-serif;
+            color: var(--branco);
+            font-size: 1.1rem
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: .95rem
+        }
+
+        nav a:hover {
+            color: var(--lilas)
+        }
+
+        /* Hero: duas metades, código e design */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--borda);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 1rem
+        }
+
+        .hero-dev {
+            background: var(--painel);
+            padding: 2.5rem 2rem
+        }
+
+        .hero-dev h1 {
+            font-size: clamp(2.6rem, 7vw, 4.6rem);
+            font-weight: 800;
+            margin-bottom: 1rem
+        }
+
+        .hero-dev p {
+            max-width: 30ch;
+            margin-bottom: 1.75rem
+        }
+
+        .botoes {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-block;
+            padding: .7rem 1.3rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--roxo)
+        }
+
+        .btn.cheio {
+            background: var(--roxo);
+            color: var(--fundo)
+        }
+
+        .btn:hover {
+            background: var(--lilas);
+            border-color: var(--lilas);
+            color: var(--fundo)
+        }
+
+        .hero-design {
+            background: linear-gradient(160deg, #2a1450, #a855f7, #2a1450, #c77dff);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem
+        }
+
+        pre {
+            font-family: "Fira Code", monospace;
+            font-size: .85rem;
+            line-height: 1.7;
+            color: var(--branco);
+            background: rgba(13, 10, 20, .72);
+            padding: 1.25rem;
+            border-radius: 4px;
+            overflow-x: auto
+        }
+
+        .amostras {
+            display: flex;
+            gap: .5rem
+        }
+
+        .amostras span {
+            flex: 1;
+            height: 44px;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, .25)
+        }
+
+        section {
+            padding: 4.5rem 0 0
+        }
+
+        .sobre {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: start
+        }
+
+        .sobre ul {
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: .9rem
+        }
+
+        .sobre li {
+            padding-left: 1.1rem;
+            border-left: 2px solid var(--roxo)
+        }
+
+        blockquote {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: 1.35rem;
+            color: var(--branco);
+            line-height: 1.4
+        }
+
+        .stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem
+        }
+
+        .stack h3 {
+            font-size: 1.1rem;
+            margin-bottom: .75rem
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            padding: 0;
+            list-style: none
+        }
+
+        .chips li {
+            font-family: "Fira Code", monospace;
+            font-size: .85rem;
+            padding: .3rem .7rem;
+            border: 1px solid var(--borda);
+            border-radius: 3px;
+            background: var(--painel)
+        }
+
+        .projetos {
+            display: grid;
+            gap: 0;
+            border-top: 1px solid var(--borda)
+        }
+
+        .projeto {
+            display: grid;
+            grid-template-columns: 1fr 2fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--borda)
+        }
+
+        .projeto h3 {
+            font-size: 1.3rem
+        }
+
+        .projeto a {
+            color: var(--lilas);
+            text-decoration: none;
+            font-weight: 500
+        }
+
+        .projeto a:hover {
+            text-decoration: underline
+        }
+
+        .projeto .nota {
+            color: var(--borda);
+            font-size: .9rem
+        }
+
+        .contacto {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1rem
+        }
+
+        .contacto a {
+            display: block;
+            padding: 1.25rem;
+            border: 1px solid var(--borda);
+            border-radius: 4px;
+            background: var(--painel);
+            text-decoration: none
+        }
+
+        .contacto a:hover {
+            border-color: var(--lilas)
+        }
+
+        .contacto b {
+            display: block;
+            color: var(--branco);
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: 1.15rem
+        }
+
+        .contacto span {
+            font-size: .92rem;
+            overflow-wrap: anywhere
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--borda);
+            font-size: .92rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem
+        }
+
+        @media (max-width:760px) {
+            nav ul {
+                gap: 1rem
+            }
+
+            .hero,
+            .sobre {
+                grid-template-columns: 1fr
+            }
+
+            .projeto {
+                grid-template-columns: 1fr;
+                gap: .5rem
+            }
+        }
+
+        /* Foto de perfil */
+        .foto {
+            position: relative;
+            width: clamp(170px, 26vw, 240px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            margin: 0 0 1.75rem 10px;
+            display: grid;
+            place-items: center;
+            background: #2a1450;
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: #fff;
+            animation: flutuar 5s ease-in-out infinite
+        }
+
+        .foto span {
+            position: relative;
+            z-index: 1
+        }
+
+        .foto img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            z-index: 2
+        }
+
+        .foto::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            background: conic-gradient(#a855f7, #0d0a14, #c77dff, #2a1450, #a855f7);
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+            animation: gira 6s linear infinite
+        }
+
+        .foto::after {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 2px solid var(--lilas);
+            animation: pulso 3s ease-out infinite
+        }
+
+        /* Fundo animado */
+        #fundo {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none
+        }
+
+        .aurora {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+            pointer-events: none
+        }
+
+        .aurora i {
+            position: absolute;
+            width: 46vmax;
+            height: 46vmax;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: .35;
+            animation: deriva 22s ease-in-out infinite alternate
+        }
+
+        .aurora i:nth-child(1) {
+            background: #a855f7;
+            top: -18%;
+            left: -12%
+        }
+
+        .aurora i:nth-child(2) {
+            background: #3a1a78;
+            top: 25%;
+            right: -18%;
+            animation-duration: 26s
+        }
+
+        .aurora i:nth-child(3) {
+            background: #c77dff;
+            bottom: -22%;
+            left: 20%;
+            opacity: .2;
+            animation-duration: 30s
+        }
+
+        @keyframes deriva {
+            to {
+                transform: translate(12vw, 10vh) scale(1.2)
+            }
+        }
+
+        @keyframes gira {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes fluxo {
+
+            0%,
+            100% {
+                background-position: 0 0
+            }
+
+            50% {
+                background-position: 100% 100%
+            }
+        }
+
+        @keyframes corre {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        @keyframes pisca {
+            50% {
+                opacity: 0
+            }
+        }
+
+        .hero-design {
+            background-size: 300% 300%;
+            animation: fluxo 10s ease infinite
+        }
+
+        .papel {
+            font-family: "Fira Code", monospace;
+            color: var(--lilas);
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            min-height: 1.7em
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: var(--lilas);
+            margin-left: 3px;
+            vertical-align: -.15em;
+            animation: pisca 1s steps(1) infinite
+        }
+
+        .faixa {
+            overflow: hidden;
+            margin-top: 2.5rem;
+            border-block: 1px solid var(--borda);
+            padding: .8rem 0;
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)
+        }
+
+        .faixa div {
+            display: flex;
+            width: max-content;
+            font-family: "Fira Code", monospace;
+            color: var(--lilas);
+            animation: corre 28s linear infinite
+        }
+
+        .faixa span {
+            padding-right: 2.5rem;
+            white-space: nowrap
+        }
+
+        /* Animações */
+        @keyframes flutuar {
+            50% {
+                transform: translateY(-6px)
+            }
+        }
+
+        @keyframes pulso {
+            from {
+                opacity: .8;
+                transform: scale(.96)
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(1.25)
+            }
+        }
+
+        @keyframes entra {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .hero-dev>:not(.foto) {
+            animation: entra .7s both
+        }
+
+        .hero-dev>:nth-child(2) {
+            animation-delay: .1s
+        }
+
+        .hero-dev>:nth-child(3) {
+            animation-delay: .25s
+        }
+
+        .hero-dev>:nth-child(4) {
+            animation-delay: .4s
+        }
+
+        .hero-dev>:nth-child(5) {
+            animation-delay: .55s
+        }
+
+        .amostras span {
+            transition: flex .35s
+        }
+
+        .amostras span:hover {
+            flex: 2.4
+        }
+
+        .chips li {
+            transition: transform .2s, border-color .2s
+        }
+
+        .chips li:hover {
+            transform: translateY(-3px);
+            border-color: var(--lilas)
+        }
+
+        .contacto a {
+            transition: transform .2s, border-color .2s
+        }
+
+        .contacto a:hover {
+            transform: translateY(-4px)
+        }
+
+        .projeto {
+            transition: padding-left .25s
+        }
+
+        .projeto:hover {
+            padding-left: .75rem
+        }
+
+        .js .rev {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .6s, transform .6s
+        }
+
+        .js .rev.on {
+            opacity: 1;
+            transform: none
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .js .rev {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <canvas id="fundo" aria-hidden="true"></canvas>
+    <div class="wrap">
+        <nav>
+            <strong>Horácio Manuel</strong>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-dev">
+                <div class="foto"><span>HM</span><img src="assets/foto.jpg" alt="Foto de Horácio Manuel"
+                        onerror="this.remove()"></div>
+                <h1>Horácio Manuel</h1>
+                <p class="papel"><span id="papel"></span><i class="cursor"></i></p>
+                <p>Desenvolvo sistemas de gestão para empresas e crio marcas, posts e identidades visuais. Angola.</p>
+                <div class="botoes">
+                    <a class="btn cheio" href="#contacto">Fala comigo</a>
+                    <a class="btn" href="https://github.com/horaciomanuel26">Ver GitHub</a>
+                </div>
+            </div>
+            <div class="hero-design">
+                <pre><code>const horacio = {
+  role: "Software Developer & Designer",
+  location: "Angola",
+  building: [
+    "Academic Management Software",
+    "Business Management Software"
+  ],
+  learning: [
+    "Clean Architecture",
+    "APIs & Front-end moderno",
+    "Design de Marca"
+  ]
+};</code></pre>
+                <div class="amostras" aria-hidden="true">
+                    <span style="background:#0d0a14"></span>
+                    <span style="background:#2a1450"></span>
+                    <span style="background:#a855f7"></span>
+                    <span style="background:#c77dff"></span>
+                    <span style="background:#d8c7f0"></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="faixa" aria-hidden="true">
+            <div>
+                <span>Laravel</span><span>PHP</span><span>Python</span><span>JavaScript</span><span>Angular</span><span>Bootstrap</span><span>SQL</span><span>Photoshop</span><span>GIMP</span><span>Git</span>
+                <span>Laravel</span><span>PHP</span><span>Python</span><span>JavaScript</span><span>Angular</span><span>Bootstrap</span><span>SQL</span><span>Photoshop</span><span>GIMP</span><span>Git</span>
+            </div>
+        </div>
+
+        <section id="sobre">
+            <h2>Sobre mim</h2>
+            <div class="sobre">
+                <ul>
+                    <li>Construo sistemas de gestão que ajudam negócios a crescer.</li>
+                    <li>Desenho marcas, posts e identidades visuais.</li>
+                    <li>Foco-me em aprender e melhorar todos os dias.</li>
+                    <li>Aberto a colaborar em projetos inovadores.</li>
+                    <li>Ofereço serviços de software e design.</li>
+                </ul>
+                <blockquote>“Programação é uma arte e a arte de programar é criar algo maravilhoso a partir do nada.”
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="stack">
+            <h2>Stack</h2>
+            <div class="stack">
+                <div>
+                    <h3>Backend</h3>
+                    <ul class="chips">
+                        <li>Laravel</li>
+                        <li>PHP</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Frontend</h3>
+                    <ul class="chips">
+                        <li>JavaScript</li>
+                        <li>Angular</li>
+                        <li>Bootstrap</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Design</h3>
+                    <ul class="chips">
+                        <li>Photoshop</li>
+                        <li>GIMP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Dados e ferramentas</h3>
+                    <ul class="chips">
+                        <li>JSON</li>
+                        <li>HTTP</li>
+                        <li>Pandas</li>
+                        <li>Excel</li>
+                        <li>Tkinter</li>
+                        <li>Visual Basic</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="projetos">
+                <article class="projeto">
+                    <h3>Manuellart</h3>
+                    <p>Mini site que mostra o meu trabalho e as minhas competências em design e desenvolvimento.</p>
+                    <a href="https://github.com/horaciomanuel26/Manuellart">Ver projeto</a>
+                </article>
+                <article class="projeto">
+                    <h3>Academic Management Software</h3>
+                    <p>Sistemas de gestão para instituições de ensino.</p>
+                    <span class="nota">Em construção</span>
+                </article>
+                <article class="projeto">
+                    <h3>Business Management Software</h3>
+                    <p>Soluções de software para otimizar processos de negócio.</p>
+                    <span class="nota">Em construção</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto">
+                <a href="mailto:manuellhoracio26@gmail.com"><b>Email</b><span>manuellhoracio26@gmail.com</span></a>
+                <a href="https://wa.me/244942347516"><b>WhatsApp</b><span>942 347 516</span></a>
+                <a href="https://www.instagram.com/horacio52012/"><b>Instagram</b><span>@horacio52012</span></a>
+                <a href="https://github.com/horaciomanuel26"><b>GitHub</b><span>horaciomanuel26</span></a>
+            </div>
+        </section>
+
+        <footer>
+            <span>© 2026 Horácio Manuel</span>
+            <span>Software e design, Angola</span>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var itens = document.querySelectorAll('section h2, .sobre>*, .stack>div, .projeto, .contacto a');
+            if (!('IntersectionObserver' in window) || !itens.length) return;
+            document.documentElement.classList.add('js');
+            var obs = new IntersectionObserver(function (entradas) {
+                entradas.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+                });
+            }, { threshold: .15 });
+            itens.forEach(function (el, i) {
+                el.classList.add('rev');
+                el.style.transitionDelay = ((i % 4) * 80) + 'ms';
+                obs.observe(el);
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            var reduz = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+            // Fundo de partículas ligadas
+            var c = document.getElementById('fundo');
+            if (c) {
+                var x = c.getContext('2d'), w, h, p = [];
+                var tam = function () {
+                    w = c.width = innerWidth; h = c.height = innerHeight;
+                    var n = Math.min(70, Math.floor(w * h / 22000)); p = [];
+                    for (var i = 0; i < n; i++)p.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 });
+                };
+                var desenha = function () {
+                    x.clearRect(0, 0, w, h);
+                    for (var i = 0; i < p.length; i++) {
+                        var a = p[i];
+                        if (!reduz) { a.x += a.vx; a.y += a.vy; if (a.x < 0 || a.x > w) a.vx *= -1; if (a.y < 0 || a.y > h) a.vy *= -1; }
+                        x.fillStyle = 'rgba(199,125,255,.7)'; x.beginPath(); x.arc(a.x, a.y, 1.6, 0, 6.283); x.fill();
+                        for (var j = i + 1; j < p.length; j++) {
+                            var b = p[j], dx = a.x - b.x, dy = a.y - b.y, d = dx * dx + dy * dy;
+                            if (d < 14400) { x.strokeStyle = 'rgba(168,85,247,' + (.35 * (1 - d / 14400)) + ')'; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke(); }
+                        }
+                    }
+                    if (!reduz) requestAnimationFrame(desenha);
+                };
+                addEventListener('resize', tam); tam(); desenha();
+            }
+
+            // Texto a escrever sob o nome
+            var el = document.getElementById('papel');
+            if (el) {
+                var t = ["Software Developer", "Designer Gráfico", "Sistemas de Gestão", "Laravel & PHP"], i = 0, j = 0, del = false;
+                if (reduz) { el.textContent = t[0]; return; }
+                var f = function () {
+                    var s = t[i]; j += del ? -1 : 1; el.textContent = s.slice(0, j);
+                    var d = del ? 40 : 80;
+                    if (!del && j === s.length) { del = true; d = 1400; }
+                    else if (del && j === 0) { del = false; i = (i + 1) % t.length; d = 300; }
+                    setTimeout(f, d);
+                };
+                f();
+            }
+        })();
+    </script>
+</body>
+
+</html>
